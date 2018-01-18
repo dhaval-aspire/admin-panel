@@ -23,5 +23,5 @@ export default {
 @import 'assets/css/main.css';
 @import 'bootstrap/dist/css/bootstrap.css';
 @import 'bootstrap-vue/dist/bootstrap-vue.css';
-
+@import 'vue-form-generator/dist/vfg-core.css';
 </style>

@@ -1,27 +1,26 @@
+import formModel from './form-data.model'
+import formSchema from './form-data.schema'
+
 export default {
 
   name: 'form-validations',
-  data () {
+  data() {
     return {
-      form: {
-        email: '',
-        name: '',
-        food: null,
-        checked: []
-      },
-      foods: [
-        { text: 'Select One', value: null },
-        'Carrots', 'Beans', 'Tomatoes', 'Corn'
-      ],
-      show: true
+      formModel: formModel,
+      formSchema: formSchema,
+      formOptions: {
+        validateAfterLoad: false,
+        validateAfterChanged: true,
+        fieldIdPrefix: 'user-'
+      }
     }
   },
   methods: {
-    onSubmit (evt) {
+    onSubmit(evt) {
       evt.preventDefault();
       alert(JSON.stringify(this.form));
     },
-    onReset (evt) {
+    onReset(evt) {
       evt.preventDefault();
       /* Reset our form values */
       this.form.email = '';
