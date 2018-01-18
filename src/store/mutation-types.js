@@ -1,0 +1,2 @@
+export const OPEN_MENU_EVENT = 'OPEN_MENU_EVENT'
+export const CLOSE_MENU_EVENT = 'CLOSE_MENU_EVENT'

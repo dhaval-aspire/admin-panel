@@ -1,0 +1,18 @@
+<div class="w3-sidebar w3-bar-block w3-card w3-animate-left" v-bind:style="{
+  display: menuEvent === MENU_STATUS.open ? 'block' : 'none'
+}" id="leftMenu">
+  <button @click="closeLeftMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>
+  <ul style="list-style-type:none;text-align:left">
+    <li>
+
+      <router-link class="w3-bar-item w3-button" to="/">Home</router-link>
+    </li>
+    <li>
+      <router-link class="w3-bar-item w3-button" to="form-validations">Form validations</router-link>
+
+    </li>
+    <li>
+      <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </li>
+  </ul>
+</div>
