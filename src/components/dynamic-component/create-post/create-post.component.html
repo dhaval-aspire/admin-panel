@@ -1,0 +1,28 @@
+<div>
+    <b-form @submit.prevent="onSubmit">
+      <b-form-group id="exampleInputGroup2"
+                    label="Post title"
+                    label-for="exampleInput2">
+        <b-form-input id="exampleInput2"
+                      type="text"
+                      v-model="form.postTitle"
+                      required
+                      placeholder="Post title">
+        </b-form-input>
+      </b-form-group>
+      <b-form-group id="exampleInputGroup3"
+                    label="Post body"
+                    label-for="exampleInput3">
+        <b-form-textarea id="exampleInput3"
+                    v-model="form.postBody"
+                    placeholder="Post body"
+                    :rows="3"
+                    :max-rows="6">
+        </b-form-textarea>
+        </b-form-input>
+      </b-form-group>
+
+      <b-button type="submit" variant="primary">Submit</b-button>
+      <b-button type="reset" variant="danger">Reset</b-button>
+    </b-form>
+  </div>

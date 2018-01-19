@@ -1,18 +1,24 @@
+import store from '../store'
 import Vue from 'vue'
 import Router from 'vue-router'
-import dashboard from '@/components/dashboard'
-import formValidations from '@/components/form-validations'
-import menuExample from '@/components/menu-example'
-
+import * as types from '../store/mutation-types'
+const dashboard = () => import('@/components/dashboard')
+const formValidations = () => import('@/components/form-validations')
+const menuExample = () => import('@/components/menu-example')
+const home = () => import('@/components/home')
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
-      name: 'dashboard',
       component: dashboard,
       children: [
+        {
+          path: '',
+          name: 'home',
+          component: home
+        },
         {
           path: '/form-validations',
           name: 'form-validations',
@@ -27,3 +33,10 @@ export default new Router({
     }
   ]
 })
+
+router.beforeEach((to, from, next) => {
+  store.commit(types.CLOSE_MENU_EVENT)
+  next()
+})
+
+export default router

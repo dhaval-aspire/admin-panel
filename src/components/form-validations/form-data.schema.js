@@ -3,7 +3,7 @@ import VueFormGenerator from 'vue-form-generator'
 export default {
   groups: [
     {
-      legend: 'User Details',
+      legend: 'Dynamic form generation',
       fields: [
         {
           type: 'input',
@@ -53,15 +53,15 @@ export default {
             'Check me out',
             'Check that out'
           ],
-          model: 'plancheckmeOut',
+          model: 'plan',
           class: 'checkbox-inline'
         },
         {
           type: 'submit',
           buttontext: 'Submit',
           validateBeforeSubmit: true,
-          onSubmit: function (data) {
-            console.log('data')
+          onSubmit: function (model, schema) {
+            console.log(model, schema)
           }
         }
       ]

@@ -1,3 +1,19 @@
-<div class="col-md-4 mx-auto text-left">
+<div class="col-md-6 mx-auto text-left">
+  <!-- <form id="abcd" novalidate > -->
   <vue-form-generator ref="profile" :schema="formSchema" :model="formModel" :options="formOptions"></vue-form-generator>
+  <!-- </form> -->
+
+  <div class="panel panel-default">
+      <div class="panel-heading">Model</div>
+      <div class="panel-body">
+        <pre v-if="formModel" v-html="prettyJSON(formModel)"></pre>
+      </div>
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Schema</div>
+      <div class="panel-body">
+        <pre v-if="formSchema" v-html="prettyJSON(formSchema)"></pre>
+      </div>
+    </div>
 </div>

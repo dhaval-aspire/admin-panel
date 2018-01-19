@@ -1,0 +1,17 @@
+<section class="home">
+    <div class="header clearfix">
+        <ul class="nav justify-content-end">
+            <li class="nav-item" @click="curentComponent = 'createPost'" :class="{active: curentComponent === 'createPost'}">
+              <a class="nav-link" >Create Post</a>
+            </li>
+            <li class="nav-item" @click="curentComponent = 'managePost'" :class="{active: curentComponent === 'managePost'}">
+              <a class="nav-link" >Manage Post</a>
+            </li>
+          </ul>
+      </div>
+  <div class="mx-auto col-md-6">
+    <keep-alive>
+      <component :is="curentComponent"></component>
+    </keep-alive>
+  </div>
+</section>
