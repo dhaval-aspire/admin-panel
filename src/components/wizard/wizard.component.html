@@ -1,0 +1,27 @@
+<section class="wizard">
+  <div>
+    <!-- Tabs with card integration -->
+    <b-card >
+      <b-tabs small card v-model="tabIndex" v-if="!submit">
+        <b-tab :head-html="getHeaderTemplate(form.first)">
+          <profile :profile="model.profile" @profileIsValid="setValiditiy(form.first)"></profile>
+        </b-tab>
+        <b-tab :disabled="!(form.first.valid)" :head-html="getHeaderTemplate(form.second)">
+          <location :location="model.location" @locationIsValid="setValiditiy(form.second)" @gotoPrevTab="gotoPrevTab"></location>
+        </b-tab>
+        <b-tab :disabled="!(form.second.valid)" :head-html="getHeaderTemplate(form.third)">
+         <company :company="model.company" @companyIsValid="setValiditiy(form.third)" @gotoPrevTab="gotoPrevTab"></company>
+        </b-tab>
+        <b-tab :disabled="!(form.third.valid)" :head-html="getHeaderTemplate(form.fourth)">
+          <account :account="model.account" @submit="setValiditiy(form.fourth);submit=true;" @gotoPrevTab="gotoPrevTab"></account>
+        </b-tab>
+      </b-tabs>
+      <div v-if="submit" class="text-center">
+        <div class="mt-2">
+          Thank you!, Your form is submitted.
+        </div>
+      </div>
+    </b-card>
+
+  </div>
+</section>

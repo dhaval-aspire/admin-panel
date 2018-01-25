@@ -1,0 +1,26 @@
+
+<section class="profile">
+  <form novalidate @submit.prevent="validateForm('form-1')" class="needs-validated" data-vv-scope="form-1">
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <label for="validationServer01">First name</label>
+        <input type="text" class="form-control" id="validationServer01" placeholder="First name" name="firstName" v-validate="'required|min:3'"  :class="{'is-invalid': errors.has('form-1.firstName')}" v-model="profile.firstName">
+        <div class="invalid-feedback">
+          <i v-show="errors.has('form-1.firstName')" class="fa fa-warning"></i>
+          <span v-show="errors.has('form-1.firstName')" class="help is-danger">{{ errors.first('form-1.firstName') }}</span>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="validationServer02">Last name</label>
+        <input type="text" class="form-control" id="validationServer02" placeholder="Last name" name="lastName" v-validate="'required|min:3'" :class="{'is-invalid': errors.has('form-1.lastName')}" v-model="profile.lastName">
+        <div class="invalid-feedback">
+          <i v-show="errors.has('form-1.lastName')" class="fa fa-warning"></i>
+          <span v-show="errors.has('form-1.lastName')" class="help is-danger">{{ errors.first('form-1.lastName') }}</span>
+        </div>
+
+      </div>
+      </div>
+
+    <button class="btn btn-primary" type="submit">Next</button>
+  </form>
+</section>

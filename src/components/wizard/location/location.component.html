@@ -1,0 +1,17 @@
+<section class="location">
+    <form novalidate @submit.prevent="validateForm('form-2')" class="needs-validated" data-vv-scope="form-2">
+        <div class="form-row">
+          <div class="col-md-4 mb-3">
+            <label for="validationServer01">Address Line1</label>
+            <input type="text" class="form-control" id="validationServer01" placeholder="Address Line1" name="addressLine1" v-validate="'required|min:3'"  :class="{'is-invalid': errors.has('form-2.addressLine1')}" v-model="location.addressLine1">
+            <div class="invalid-feedback">
+              <i v-show="errors.has('form-2.addressLine1')" class="fa fa-warning"></i>
+              <span v-show="errors.has('form-2.addressLine1')" class="help is-danger">{{ errors.first('form-2.addressLine1') }}</span>
+            </div>
+          </div>
+          </div>
+
+          <button class="btn btn-default" type="button" @click="$emit('gotoPrevTab')">Prev</button>
+        <button class="btn btn-primary" type="submit">Next</button>
+      </form>
+</section>
